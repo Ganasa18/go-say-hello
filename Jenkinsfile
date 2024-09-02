@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Prepare Environtement') {
       steps {
-        echo 'Check out from version control'
+        sh 'echo "Prepare environtment" ls'
       }
     }
 
