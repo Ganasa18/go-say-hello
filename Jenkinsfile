@@ -6,6 +6,12 @@ pipeline {
         echo 'Prepare Environtment'
         sh 'ls -la'
         sh 'printf develope openssl dgst -r -sha256 -hmac sregitops'
+        sh ''' def dockerfileExists = fileExists(\'Dockerfile\')
+                    if (dockerfileExists) {
+                        echo \'Dockerfile exists.\'
+                    } else {
+                        error \'Dockerfile not found.\'
+                    }'''
       }
     }
 
