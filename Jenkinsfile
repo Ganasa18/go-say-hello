@@ -4,7 +4,8 @@ pipeline {
     stage('Prepare Environtement') {
       steps {
         echo 'Prepare Environtment'
-        sh 'ls -la'
+        sh ''' def commitMessage = sh(script: \'git log -1 --pretty=format:"%H - %an, %ar : %s"\', returnStdout: true).trim()
+                    echo "Latest commit: go-say-hello${commitMessage}"'''
       }
     }
 
