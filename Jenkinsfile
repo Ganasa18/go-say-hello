@@ -7,7 +7,7 @@ pipeline {
         sh 'ls -la'
         sh 'printf develope openssl dgst -r -sha256 -hmac sregitops'
         script {
-          docker ps -a
+          docker ps
         }
 
       }
