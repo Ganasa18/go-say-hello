@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('Prepare Environtement') {
       steps {
-        sh 'echo "Prepare environtment" sh \'ls -la\''
+        echo 'Prepare Environtment'
+        sh 'ls -la'
       }
     }
 
